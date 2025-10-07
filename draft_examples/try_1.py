@@ -43,7 +43,7 @@ def main():
             
     # TEST CODE 1:
     print("\nTEST CODE OUTPUT:\n")
-    obj = get_horizons("2022 SS2", datetime_et)
+    obj = get_horizons("2025 SP23", datetime_et)
     pha_el = get_orbital_elements(obj)
     pha_v = get_vector_elements(obj)
     range_rate = pha_v[-1]
