@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}Mitigation - General{% endblock %}
+
+{% block main %}
+
+    <div class="deflection-content7">
+
+        <div class="page-title-section7">
+            <h2 class="page-title7">ASTEROID DEFLECTION</h2>
+            <p class="page-subtitle7">Adjust satellite parameters to deflect the asteroid</p>
+        </div>
+
+        <div class="deflection-layout7">
+            <div class="controls-section7">
+                <div class="slider-control7">
+                    <div class="slider-header7">
+                        <h3 class="slider-title7">Satellite Mass</h3>
+                        <span class="slider-value7" id="massValue7">5000 kg</span>
+                    </div>
+                    <div class="slider-container7">
+                        <div class="slider-track7">
+                            <div class="slider-fill7" id="massFill7"></div>
+                            <input type="range" min="1000" max="10000" value="5000" class="slider7" id="massSlider7">
+                        </div>
+                        <div class="slider-labels7">
+                            <span>1000 kg</span>
+                            <span>10000 kg</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-control7">
+                    <div class="slider-header7">
+                        <h3 class="slider-title7">Impact Velocity</h3>
+                        <span class="slider-value7" id="velocityValue7">50 m/s</span>
+                    </div>
+                    <div class="slider-container7">
+                        <div class="slider-track7">
+                            <div class="slider-fill7" id="velocityFill7"></div>
+                            <input type="range" min="10" max="200" value="50" class="slider7" id="velocitySlider7">
+                        </div>
+                        <div class="slider-labels7">
+                            <span>10 m/s</span>
+                            <span>200 m/s</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-control7">
+                    <div class="slider-header7">
+                        <h3 class="slider-title7">Impact Angle</h3>
+                        <span class="slider-value7" id="angleValue7">45°</span>
+                    </div>
+                    <div class="slider-container7">
+                        <div class="slider-track7">
+                            <div class="slider-fill7" id="angleFill7"></div>
+                            <input type="range" min="-180" max="180" value="45" class="slider7" id="angleSlider7">
+                        </div>
+                        <div class="slider-labels7">
+                            <span>-180°</span>
+                            <span>180°</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="deflection-buttons7">
+                    <button class="launch-button7" id="launchBtn7">
+                        <span class="btn-text7">Launch Satellite</span>
+                        <div class="btn-shine7"></div>
+                    </button>
+
+                    <button class="back-button7" onclick="window.location.href='/'">
+                        Back to Main
+                    </button>
+                </div>
+            </div>
+
+            <div class="visualization-section7">
+                <div class="visualization-placeholder7">
+                    <div class="vis-title7">Deflection Visualization</div>
+                    <div class="vis-content7">
+                        <div class="earth-vis7">🌍</div>
+                        <div class="asteroid-vis7">🪨</div>
+                        <div class="satellite-vis7">🛰️</div>
+                        <div class="trajectory7"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+const massSlider7 = document.getElementById('massSlider7');
+const velocitySlider7 = document.getElementById('velocitySlider7');
+const angleSlider7 = document.getElementById('angleSlider7');
+const massValue7 = document.getElementById('massValue7');
+const velocityValue7 = document.getElementById('velocityValue7');
+const angleValue7 = document.getElementById('angleValue7');
+const massFill7 = document.getElementById('massFill7');
+const velocityFill7 = document.getElementById('velocityFill7');
+const angleFill7 = document.getElementById('angleFill7');
+const launchBtn7 = document.getElementById('launchBtn7');
+
+function updateSlider7(slider, valueElement, fillElement, suffix = '') {
+    const value = slider.value;
+    const min = slider.min;
+    const max = slider.max;
+    const percentage = ((value - min) / (max - min)) * 100;
+    
+    fillElement.style.width = percentage + '%';
+    valueElement.textContent = value + suffix;
+}
+
+
+updateSlider7(massSlider7, massValue7, massFill7, ' kg');
+updateSlider7(velocitySlider7, velocityValue7, velocityFill7, ' m/s');
+updateSlider7(angleSlider7, angleValue7, angleFill7, '°');
+
+massSlider7.addEventListener('input', () => updateSlider7(massSlider7, massValue7, massFill7, ' kg'));
+velocitySlider7.addEventListener('input', () => updateSlider7(velocitySlider7, velocityValue7, velocityFill7, ' m/s'));
+angleSlider7.addEventListener('input', () => updateSlider7(angleSlider7, angleValue7, angleFill7, '°'));
+
+
+launchBtn7.addEventListener('click', function() {
+    this.classList.add('launching7');
+    setTimeout(() => {
+        this.classList.remove('launching7');
+        alert('Satellite launched! Deflection simulation started.');
+    }, 2000);
+});
+</script>
+
+</body>
+</html>
+Observation & Early Warning
+Civil Defense & Evacuation
+{% endblock %}

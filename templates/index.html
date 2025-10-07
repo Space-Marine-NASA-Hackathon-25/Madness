@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Madness{% endblock %}
+
+{% block body_attrs %}id="default-page"{% endblock %}
+{% block main %}
+<div class="content">
+    <div class="buttons-section">
+        <button type="submit" class="nav-button" onclick="window.location.href='/search'">Search meteors</button>
+    <button class="nav-button" onclick="window.location.href='/simulation'">Set meteors</button>
+    <button class="nav-button" onclick="window.location.href='/result'">
+Simulate</button>
+    <button class="nav-button" onclick="window.location.href='/'">Mitigate</button>
+    <div class="info-buttons">
+            <button class="info-button">About Us</button>
+            <button class="info-button">How it work</button>
+    </div>
+
+</div>
+    <div class="selection-section">
+        <div class="material-selector">
+            <h3 class="selector-title">Available asteroids
+</h3>
+            <div class="asteroids-container">
+                <div class="asteroids-scroll">
+                    <div class="asteroid-item" data-meteor="2024JW16" onclick="selectAsteroid('2024JW16')">
+                        <div class="asteroid-content">
+                            <span class="asteroid-name">2024JW16</span>
+                            <span class="asteroid-details">Rocky • 0.12 AU • 1500 кг</span>
+                        </div>
+                        <div class="asteroid-arrow">→</div>
+                    </div>
+
+                    <div class="asteroid-item" data-meteor="2013TP4" onclick="selectAsteroid('2013TP4')">
+                        <div class="asteroid-content">
+                            <span class="asteroid-name">2013TP4</span>
+                            <span class="asteroid-details">Iron • 0.08 AU • 2800 кг</span>
+                        </div>
+                        <div class="asteroid-arrow">→</div>
+                    </div>
+
+                    <div class="asteroid-item" data-meteor="2014CR13" onclick="selectAsteroid('2014CR13')">
+                        <div class="asteroid-content">
+                            <span class="asteroid-name">2014CR13</span>
+                            <span class="asteroid-details">Stony-Iron • 0.15 AU • 1900 кг</span>
+                        </div>
+                        <div class="asteroid-arrow">→</div>
+                    </div>
+
+                    <div class="asteroid-item" data-meteor="2008FF5" onclick="selectAsteroid('2008FF5')">
+                        <div class="asteroid-content">
+                            <span class="asteroid-name">2008FF5</span>
+                            <span class="asteroid-details">Stony• 0.22 AU • 1200 кг</span>
+                        </div>
+                        <div class="asteroid-arrow">→</div>
+                    </div>
+
+                    <div class="asteroid-item" data-meteor="2021EU" onclick="selectAsteroid('2021EU')">
+                        <div class="asteroid-content">
+                            <span class="asteroid-name">2021EU</span>
+                            <span class="asteroid-details">Icy • 0.18 AU • 800 кг</span>
+                        </div>
+                        <div class="asteroid-arrow">→</div>
+                    </div>
+
+                    <div class="asteroid-item" data-meteor="2006JY26" onclick="selectAsteroid('2006JY26')">
+                        <div class="asteroid-content">
+                            <span class="asteroid-name">2006JY26</span>
+                            <span class="asteroid-details">Iron • 0.09 AU • 3200 кг</span>
+                        </div>
+                        <div class="asteroid-arrow">→</div>
+                    </div>
+
+                    <div class="asteroid-item" data-meteor="2025SQ4" onclick="selectAsteroid('2025SQ4')">
+                        <div class="asteroid-content">
+                            <span class="asteroid-name">2025SQ4</span>
+                            <span class="asteroid-details">Stony • 0.14 AU • 1700 кг</span>
+                        </div>
+                        <div class="asteroid-arrow">→</div>
+                    </div>
+                </div>
+                <div class="scroll-indicator">↓ Scroll down for more asteroids</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function selectAsteroid(meteorId) {
+window.location.href = '/result?meteor=' + meteorId;
+}
+</script>
+{% endblock %}

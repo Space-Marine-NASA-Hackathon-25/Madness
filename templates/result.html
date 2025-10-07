@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}Result{% endblock %}
+{% block body_attrs %}id="result-page"{% endblock %}
+{% block main %}
+        <div class="container4">
+            <header>
+                <h1 class="main-title4">Consequences Of Collision</h1>
+            </header>
+            <div class="content-grid4">
+
+                <div class="column4 left-column4">
+                    <div class="text-block4">
+                        <h2 class="block-title4">Air Explosion
+</h2>
+                        <div class="input-group4">
+                            <p class="text-input4">
+                                    Your meteor exploded in the air at an altitude of 2 km. If you were farther than 10 km from the epicenter, you would have remained unharmed. At shorter distances, shock waves, broken windows, and minor building damage are possible.
+                                    <br>
+                                <br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-block4">
+                        <h2 class="block-title4">Ground Impact
+</h2>
+                        <div class="input-group4">
+                            <p class="text-input4">
+                            The meteor reached the Earth's surface, creating an impact crater about 300 meters in diameter and 60 meters deep. Within a 5 km radius, everything would be destroyed by the shock wave.                                <br>
+                                <br>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column4 center-column4">
+                    <div class="text-block4">
+                        <h2 class="block-title4">Seismic Effects
+</h2>
+                        <div class="input-group4">
+                            <p class="text-input4">
+                            Ground tremors could be felt even up to 20 km away. The fall of the meteorite would shake the ground like a magnitude 5.3 earthquake.                                <br>
+                                <br>
+                                
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-block4">
+                        <h2 class="block-title4">Tsunami Impact
+</h2>
+                        <div class="input-group4">
+                            <p class="text-input4">
+                                The meteor fell into a body of water, generating a wave 40 meters high near the epicenter. At the shore, the wave height reached 5 meters.<br>
+                                <br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column4 right-column4">
+                    <div class="text-block4">
+                        <h2 class="block-title4">Safety Zones
+</h2>
+                        <div class="input-group4">
+                            <p class="text-input4">
+If you are farther than 20 km from the shore, the effects would be minimal. Coastal areas could experience partial or complete flooding. If you are near the shore, the effects would be critical.                                <br>
+                                <br>
+                            </p>
+                        </div>
+                    </div>
+
+<div class="text-block4 map-block4 map-clickable" onclick="window.location.href='/meteor_entry_map.html'">
+    <h2 class="block-title4">Map
+</h2>
+    <div class="map-container4">
+        <div class="map-placeholder4">
+            <span class="map-text4">View Map
+</span>
+        </div>
+    </div>
+</div>
+
+<style>
+.map-clickable {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.map-clickable:hover {
+    transform: translateY(-5px);
+    border-color: #00ffff;
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+}
+</style>
+                </div>
+            </div>
+
+            <div class="action-section4">
+                <button class="change-button4">Choose Another
+</button>
+            </div>
+        </div>
+
+(Some text about {{ asteroid }} hitting Earth + parameters.)
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Mitigation - Deflection{% endblock %}
+{% block body_attrs %}id="deflection-page"{% endblock %}
+{% block main %}
+Impact Deflection via Kinetic Methods
+    <div class="container5">
+        <div class="content-wrapper5">
+            <div class="parameters-section5">
+                <div class="parameter-group5">
+                    <div class="parameter5">
+                        <span class="param-label5">Mass</span>
+                        <div class="param-value5">2000</div>
+                    </div>
+                    <div class="parameter5">
+                        <span class="param-label5">Velocity</span>
+                        <div class="param-value5">650</div>
+                    </div>
+                    <div class="parameter5">
+                        <span class="param-label5">Angle</span>
+                        <div class="param-value5">30°</div>
+                    </div>
+                    <div class="parameter5">
+                        <span class="param-label5">Time</span>
+                        <div class="param-value5">60</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttons-section5">
+                <button class="launch-btn5">
+                    Launch satellite
+                    <div class="btn-shine5"></div>
+                </button>
+                <button class="back-btn5">
+                    Back
+                </button>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

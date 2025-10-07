@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Simulation{% endblock %}
+
+{% block main %}
+        <div class="container2">
+            <div class="content2">
+                <section class="input-section2">
+                    <h2 class="section-title3">Set Meteorite Parameters
+</h2>
+
+                    <div class="input-group2">
+                        <label for="mass" class="text2">Mass
+ (кг)</label>
+                        <input type="number" id="mass" class="custom-input2" placeholder="Enter Mass…
+">
+                    </div>
+
+                    <div class="input-group2">
+                        <label for="density" class="text2">Густина (кг/м³)</label>
+                        <input type="number" id="diameter" class="custom-input2" placeholder="Enter Diameter…
+">
+                    </div>
+
+                    <div class="input-group2">
+                        <label for="entry-speed" class="text2">Entry Speed (km/s)
+)</label>
+                        <input type="number" id="entry-speed" class="custom-input2" placeholder="Enter Speed…
+">
+                    </div>
+
+<button class="simulate-btn2" onclick="simulateAndRedirect()">
+    <span class="btn-text2">Simulate
+</span>
+    <div class="btn-shine2"></div>
+</button>
+
+<script>
+function simulateAndRedirect() {
+    const btn = document.querySelector('.simulate-btn2');
+    btn.classList.add('loading');
+    setTimeout(() => {
+        window.location.href = '/result';
+    }, 1000);
+}
+</script>
+                </section>
+                <section class="visualization-section2">
+                <div class="meteor-gif1">
+                    <div class="gif-label1">Asteroid Animation</div>
+                    <img src="https://drive.google.com/uc?export=download&id=1j-0PEe3dP2YOysE7tGmWvSIn-VfmBpQO"
+                    alt="Asteroid"
+                    class="asteroid-image">
+                </div>
+                    <button class="custom-meteorite-btn2">
+                        Custom Meteorite
+                        <div class="btn-glow2"></div>
+                    </button>
+                </section>
+            </div>
+        </div>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}

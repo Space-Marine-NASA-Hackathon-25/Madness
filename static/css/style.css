@@ -1,0 +1,1826 @@
+/* фони */
+body.default-page {
+    background: url("../images/earth.jpg");
+}
+
+body.search-page {
+    background: url("../images/earth2.png");
+}
+
+body.about-page {
+    background: url("../images/Earth21.jpeg");
+}
+
+body.how-it-works-page {
+    background: url("../images/how-it-works-bg.jpg");
+}
+
+body.result-page {
+    background: url("../images/Earth21.jpeg");
+}
+.body.deflection-paf{
+    background: url("../images/sky.jpeg");
+}
+/* Загальні стилі для всіх фонів */
+body {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: "Exo 2", sans-serif;
+    color: #e0f7ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+
+
+
+/* посилання */
+header a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+header a:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 30px rgba(0, 229, 255, 1),
+    0 0 40px rgba(0, 229, 255, 0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*base.html*/
+body {
+    font-family: "Exo 2", sans-serif;
+    background: url("../images/earth.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #e0f7ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 2rem;
+}
+
+.main-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5rem;
+    font-weight: 900;
+    color: #00e5ff;
+    text-shadow: 0 0 15px rgba(0, 229, 255, 0.7);
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+.subtitle {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #a0e7ff;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+}
+
+
+.content {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.buttons-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.nav-button {
+    background: rgba(0, 40, 80, 0.7);
+    border: 2px solid #00a8ff;
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    color: #e0f7ff;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 168, 255, 0.3);
+    text-decoration: none;
+    display: block;
+}
+
+.nav-button:hover {
+    background: rgba(0, 80, 160, 0.8);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 168, 255, 0.5);
+}
+
+.nav-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.nav-button:hover::before {
+    left: 100%;
+}
+
+.info-buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.info-button {
+    background: rgba(0, 40, 80, 0.5);
+    border: 1px solid #00a8ff;
+    border-radius: 6px;
+    padding: 0.6rem 1.2rem;
+    color: #e0f7ff;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.info-button:hover {
+    background: rgba(0, 80, 160, 0.7);
+    transform: translateY(-2px);
+}
+
+
+
+
+.selection-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.material-selector {
+    background: rgba(10, 25, 47, 0.8);
+    border: 2px solid #0077b6;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(0, 119, 182, 0.4);
+}
+
+.selector-title {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.3rem;
+    color: #00e5ff;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.material-options {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    justify-content: space-between;
+}
+
+.material-option {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+.material-option:hover {
+    background: rgba(30, 70, 120, 0.9);
+    transform: scale(1.05);
+}
+
+.material-option.active {
+    background: rgba(0, 150, 199, 0.8);
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 150, 199, 0.7);
+}
+
+.meteor-gif {
+    width: 100%;
+    height: 300px;
+    background: rgba(10, 25, 47, 0.6);
+    border: 2px solid #0077b6;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #90e0ef;
+    font-size: 1.1rem;
+    box-shadow: 0 0 20px rgba(0, 119, 182, 0.3);
+    overflow: hidden;
+}
+
+.placeholder {
+    text-align: center;
+    padding: 2rem;
+}
+
+.asteroids-container {
+    max-height: 300px;
+    position: relative;
+    margin-top: 1.5rem;
+}
+
+.asteroids-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+
+.asteroids-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.asteroids-scroll::-webkit-scrollbar-track {
+    background: rgba(20, 50, 90, 0.3);
+    border-radius: 3px;
+}
+
+.asteroids-scroll::-webkit-scrollbar-thumb {
+    background: #0077b6;
+    border-radius: 3px;
+}
+
+.asteroids-scroll::-webkit-scrollbar-thumb:hover {
+    background: #00e5ff;
+}
+
+.asteroid-item {
+    background: rgba(10, 25, 47, 0.8);
+    border: 2px solid #0077b6;
+    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0, 119, 182, 0.2);
+    flex-shrink: 0;
+}
+
+.asteroid-item:hover {
+    background: rgba(20, 50, 90, 0.9);
+    border-color: #00e5ff;
+    transform: translateX(5px);
+    box-shadow: 0 4px 20px rgba(0, 229, 255, 0.3);
+}
+
+.asteroid-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: #0077b6;
+    transition: all 0.3s ease;
+}
+
+.asteroid-item:hover::before {
+    background: #00e5ff;
+    width: 6px;
+}
+
+.asteroid-content {
+    flex: 1;
+}
+
+.asteroid-name {
+    display: block;
+    color: #00e5ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+}
+
+.asteroid-details {
+    display: block;
+    color: #a0e7ff;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.asteroid-arrow {
+    color: #0077b6;
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: all 0.3s ease;
+    margin-left: 1rem;
+}
+
+.asteroid-item:hover .asteroid-arrow {
+    color: #00e5ff;
+    transform: translateX(3px);
+}
+
+.scroll-indicator {
+    text-align: center;
+    color: #a0e7ff;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    opacity: 0.7;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.asteroid-item[data-meteor="2024JW16"]::before { background: #ff6b6b; }
+.asteroid-item[data-meteor="2013TP4"]::before { background: #4ecdc4; }
+.asteroid-item[data-meteor="2014CR13"]::before { background: #45b7d1; }
+.asteroid-item[data-meteor="2008FF5"]::before { background: #f9c74f; }
+.asteroid-item[data-meteor="2021EU"]::before { background: #90be6d; }
+.asteroid-item[data-meteor="2006JY26"]::before { background: #577590; }
+.asteroid-item[data-meteor="2025SQ4"]::before { background: #f94144; }
+
+.asteroid-item:hover[data-meteor="2024JW16"]::before { background: #ff8e8e; }
+.asteroid-item:hover[data-meteor="2013TP4"]::before { background: #6de0d8; }
+.asteroid-item:hover[data-meteor="2014CR13"]::before { background: #67c7e1; }
+.asteroid-item:hover[data-meteor="2008FF5"]::before { background: #fbd56f; }
+.asteroid-item:hover[data-meteor="2021EU"]::before { background: #a8d492; }
+.asteroid-item:hover[data-meteor="2006JY26"]::before { background: #6f8aab; }
+.asteroid-item:hover[data-meteor="2025SQ4"]::before { background: #fb6b6e; }
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 15px rgba(0, 229, 255, 0.7);
+    }
+    to {
+        text-shadow: 0 0 25px rgba(0, 229, 255, 0.9), 0 0 35px rgba(0, 229, 255, 0.5);
+    }
+}
+
+@keyframes buttonGlow {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 168, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 168, 255, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(0, 168, 255, 0.3);
+    }
+}
+
+.nav-button:hover {
+    animation: buttonGlow 1.5s infinite;
+}
+
+@media (max-width: 900px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .main-title {
+        font-size: 3.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+
+/*2page.css*/
+
+
+
+.content1 {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+
+.search-section1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.details-section1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.material-selector1 {
+    background: rgba(10, 25, 47, 0.8);
+    border: 2px solid #0077b6;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(0, 119, 182, 0.4);
+}
+
+.selector-title1 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.3rem;
+    color: #00e5ff;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+
+.search-input-group1 {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-field1 {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    background: rgba(20, 50, 90, 0.7);
+    border: 1px solid #0096c7;
+    border-radius: 6px;
+    color: #e0f7ff;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1rem;
+}
+
+.search-field1:focus {
+    outline: none;
+    border-color: #00e5ff;
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+}
+
+.search-btn1 {
+    padding: 0.8rem 1.2rem;
+    background: rgba(0, 150, 199, 0.8);
+    border: 1px solid #00a8ff;
+    border-radius: 6px;
+    color: #ffffff;
+    font-family: 'Exo 2', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-btn1:hover {
+    background: rgba(0, 170, 219, 0.9);
+    transform: translateY(-2px);
+}
+
+.results-list1 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.result-item1 {
+    padding: 0.8rem 1rem;
+    background: rgba(20, 50, 90, 0.7);
+    border: 1px solid #0096c7;
+    border-radius: 6px;
+    color: #caf0f8;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.result-item1:hover {
+    background: rgba(30, 70, 120, 0.9);
+    transform: scale(1.02);
+}
+
+.result-item1.active1 {
+    background: rgba(0, 150, 199, 0.8);
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 150, 199, 0.7);
+}
+
+
+.char-list1 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.char-line1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(0, 119, 182, 0.3);
+}
+
+.char-name1 {
+    font-weight: 500;
+    color: #a0e7ff;
+}
+
+.char-value1 {
+    color: #00e5ff;
+    font-weight: 600;
+}
+
+
+.meteor-gif1 {
+    width: 100%;
+    height: 300px;
+    background: rgba(10, 25, 47, 0.6);
+    border: 2px solid #0077b6;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #90e0ef;
+    box-shadow: 0 0 20px rgba(0, 119, 182, 0.3);
+    overflow: hidden;
+    position: relative;
+    padding: 1rem;
+}
+
+.gif-label1 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.3rem;
+    color: #00e5ff;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.asteroid-image {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.meteor-visual1 {
+    width: 120px;
+    height: 120px;
+    position: relative;
+}
+
+
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 15px rgba(0, 229, 255, 0.7);
+    }
+    to {
+        text-shadow: 0 0 25px rgba(0, 229, 255, 0.9), 0 0 35px rgba(0, 229, 255, 0.5);
+    }
+}
+
+@keyframes meteorPulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+}
+
+@keyframes trailGlow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+}
+
+@media (max-width: 900px) {
+    .content1 {
+        flex-direction: column;
+    }
+}
+
+
+/*simulation.css*/
+.header3 {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 2rem;
+}
+
+.content2 {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.input-section2 {
+    flex: 1;
+    background: rgba(10, 25, 47, 0.8);
+    border: 2px solid #0077b6;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 119, 182, 0.4);
+}
+
+.section-title3 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #a0e7ff;
+    margin-bottom: 2rem;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(160, 231, 255, 0.5);
+}
+
+
+.input-group2 {
+    margin-bottom: 1.5rem;
+}
+
+.text2 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.1rem;
+    color: #a0e7ff;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.custom-input2 {
+    width: 100%;
+    background: rgba(0, 40, 80, 0.7);
+    border: 1px solid #00a8ff;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    color: #e0f7ff;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.custom-input2:focus {
+    outline: none;
+    border-color: #00e5ff;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.custom-input2::placeholder {
+    color: #70d6ff;
+    opacity: 0.7;
+}
+
+
+.simulate-btn2 {
+    width: 100%;
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    border: none;
+    border-radius: 10px;
+    padding: 1.2rem;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 180, 216, 0.4);
+}
+
+.simulate-btn2:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 180, 216, 0.6);
+}
+
+.btn-shine2 {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.7s;
+}
+
+.simulate-btn2:hover .btn-shine2 {
+    left: 100%;
+}
+
+.visualization-section2 {
+    gap: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gif-container2 {
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0, 119, 182, 0.3);
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: rgba(10, 25, 47, 0.6);
+    border: 2px solid #0077b6;
+    border-radius: 10px;
+}
+
+.gif-placeholder2 {
+    text-align: center;
+    padding: 2rem;
+    color: #90e0ef;
+    font-size: 1.3rem;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.gif-text2 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.3rem;
+    color: #00e5ff;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+
+.custom-meteorite-btn2 {
+    background: rgba(0, 40, 80, 0.9);
+    border: 2px solid #00e5ff;
+    border-radius: 10px;
+    padding: 1.2rem 2.5rem;
+    color: #e0f7ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.custom-meteorite-btn2:hover {
+    background: rgba(0, 80, 160, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 25px rgba(0, 229, 255, 0.6);
+}
+
+.btn-glow2 {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.4), transparent);
+    transition: left 0.7s;
+}
+
+.custom-meteorite-btn2:hover .btn-glow2 {
+    left: 100%;
+}
+
+@keyframes pulse2 {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.gif-container2:hover {
+    animation: pulse2 2s infinite;
+}
+
+@media (max-width: 900px) {
+    .content2 {
+        flex-direction: column;
+    }
+
+    .input-section2, .visualization-section2 {
+        width: 100%;
+    }
+}
+
+.container2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 2rem;
+}
+
+.main-title2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5rem;
+    font-weight: 900;
+    color: #00e5ff;
+    text-shadow: 0 0 15px rgba(0, 229, 255, 0.7);
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+    animation: glow2 3s ease-in-out infinite alternate;
+}
+
+.subtitle2 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #a0e7ff;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+}
+
+@keyframes glow2 {
+    from {
+        text-shadow: 0 0 15px rgba(0, 229, 255, 0.7);
+    }
+    to {
+        text-shadow: 0 0 25px rgba(0, 229, 255, 0.9), 0 0 35px rgba(0, 229, 255, 0.5);
+    }
+}
+
+
+
+/*result.css*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Exo 2", sans-serif;
+    background: url("../images/earth.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #e0f7ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container4 {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+}
+
+.main-title4 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: #00e5ff;
+    text-shadow: 0 0 15px rgba(0, 229, 255, 0.7);
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    animation: glow4 3s ease-in-out infinite alternate;
+}
+
+.content-grid4 {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.column4 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+.left-column4, .center-column4, .right-column4 {
+    justify-content: space-between;
+}
+
+.text-block4 {
+    background: rgba(10, 25, 47, 0.8);
+    border: 2px solid #0077b6;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 0 20px rgba(0, 119, 182, 0.4);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+}
+
+.block-title4 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.4rem;
+    color: #00e5ff;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+    text-align: center;
+}
+
+.input-group4 {
+    margin-top: auto;
+}
+
+.text-input4 {
+    width: 100%;
+    padding: 1.2rem;
+    background: rgba(20, 50, 90, 0.7);
+    border: 1px solid #0096c7;
+    border-radius: 8px;
+    color: #e0f7ff;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: center;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.map-block4 {
+    background: rgba(10, 25, 47, 0.8);
+    border: 2px solid #0077b6;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 0 20px rgba(0, 119, 182, 0.4);
+    min-height: 220px;
+}
+
+.map-container4 {
+    margin-top: 1rem;
+    flex: 1;
+}
+
+.map-placeholder4 {
+    width: 100%;
+    height: 100%;
+    min-height: 120px;
+    background: rgba(20, 50, 90, 0.7);
+    border: 2px dashed #0096c7;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #90e0ef;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.map-placeholder4:hover {
+    border-color: #00e5ff;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+}
+
+.map-text4 {
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
+}
+
+.action-section4 {
+    text-align: center;
+    margin-top: auto;
+    padding-bottom: 1.5rem;
+}
+
+.change-button4 {
+    background: rgba(0, 40, 80, 0.7);
+    border: 2px solid #00a8ff;
+    border-radius: 10px;
+    padding: 1.2rem 2.5rem;
+    color: #e0f7ff;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 168, 255, 0.3);
+    animation: pulse4 2s infinite;
+}
+
+.change-button4:hover {
+    background: rgba(0, 80, 160, 0.8);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 168, 255, 0.5);
+    animation: none;
+}
+
+.change-button4::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.change-button4:hover::before {
+    left: 100%;
+}
+
+@keyframes glow4 {
+    from {
+        text-shadow: 0 0 15px rgba(0, 229, 255, 0.7);
+    }
+    to {
+        text-shadow: 0 0 25px rgba(0, 229, 255, 0.9), 0 0 35px rgba(0, 229, 255, 0.5);
+    }
+}
+
+@keyframes pulse4 {
+    0% {
+        box-shadow: 0 0 12px rgba(0, 168, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 168, 255, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 12px rgba(0, 168, 255, 0.4);
+    }
+}
+
+
+@media (max-width: 900px) {
+    .main-title4 {
+        font-size: 2.5rem;
+    }
+    
+    .container4 {
+        padding: 1rem;
+    }
+    
+    .content-grid4 {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .column4 {
+        gap: 1rem;
+    }
+    
+    .text-block4 {
+        min-height: 180px;
+    }
+    
+    .block-title4 {
+        font-size: 1.3rem;
+    }
+    
+    .text-input4 {
+        font-size: 1rem;
+        min-height: 100px;
+        padding: 1rem;
+    }
+    
+    .map-placeholder4 {
+        min-height: 100px;
+        font-size: 1.1rem;
+    }
+    
+    .change-button4 {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-title4 {
+        font-size: 2rem;
+    }
+    
+    .container4 {
+        padding: 0.8rem;
+    }
+    
+    .text-block4, .map-block4 {
+        padding: 1.2rem;
+    }
+    
+    .block-title4 {
+        font-size: 1.2rem;
+    }
+    
+    .map-placeholder4 {
+        min-height: 80px;
+        font-size: 1rem;
+    }
+}
+
+/*deflection.css*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Exo 2", sans-serif;
+    background: url("../images/sky.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #e0f7ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container5 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header5 {
+    text-align: left;
+    margin-bottom: 4rem;
+    padding-top: 3rem;
+}
+
+.main-title5 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5rem;
+    font-weight: 900;
+    color: #00e5ff;
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.8);
+    letter-spacing: 6px;
+    margin-bottom: 1rem;
+    animation: glow5 3s ease-in-out infinite alternate;
+}
+
+.subtitle5 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #a0e7ff;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.content-wrapper5 {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.parameters-section5 {
+    background: rgba(10, 25, 47, 0.8);
+    border: 2px solid #0077b6;
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 0 25px rgba(0, 119, 182, 0.5);
+    max-width: 500px;
+}
+
+.parameter-group5 {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.parameter5 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 150, 199, 0.3);
+}
+
+.parameter5:last-child {
+    border-bottom: none;
+}
+
+.param-label5 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.4rem;
+    color: #a0e7ff;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.param-value5 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    color: #00e5ff;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.buttons-section5 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 500px;
+}
+
+.launch-btn5 {
+    width: 100%;
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    border: none;
+    border-radius: 12px;
+    padding: 1.5rem;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 25px rgba(0, 180, 216, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.launch-btn5:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 180, 216, 0.8);
+}
+
+.btn-shine5 {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.7s;
+}
+
+.launch-btn5:hover .btn-shine5 {
+    left: 100%;
+}
+
+.back-btn5 {
+    width: 100%;
+    background: rgba(0, 40, 80, 0.7);
+    border: 2px solid #00a8ff;
+    border-radius: 12px;
+    padding: 1.2rem;
+    color: #e0f7ff;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 168, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.back-btn5:hover {
+    background: rgba(0, 80, 160, 0.8);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 168, 255, 0.6);
+}
+
+@keyframes glow5 {
+    from {
+        text-shadow: 0 0 20px rgba(0, 229, 255, 0.8);
+    }
+    to {
+        text-shadow: 0 0 30px rgba(0, 229, 255, 1), 0 0 40px rgba(0, 229, 255, 0.6);
+    }
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .container5 {
+        padding: 1.5rem;
+    }
+    
+    .main-title5 {
+        font-size: 3.5rem;
+        letter-spacing: 4px;
+    }
+    
+    .subtitle5 {
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+    }
+    
+    .parameters-section5 {
+        padding: 2rem;
+        max-width: 100%;
+    }
+    
+    .param-label5 {
+        font-size: 1.2rem;
+    }
+    
+    .param-value5 {
+        font-size: 1.5rem;
+    }
+    
+    .launch-btn5 {
+        font-size: 1.2rem;
+        padding: 1.3rem;
+    }
+    
+    .back-btn5 {
+        font-size: 1.1rem;
+        padding: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container5 {
+        padding: 1rem;
+    }
+    
+    .main-title5 {
+        font-size: 2.8rem;
+    }
+    
+    .subtitle5 {
+        font-size: 1rem;
+    }
+    
+    .parameters-section5 {
+        padding: 1.5rem;
+    }
+    
+    .parameter-group5 {
+        gap: 1.5rem;
+    }
+    
+    .parameter5 {
+        padding: 0.8rem 0;
+    }
+    
+    .param-label5 {
+        font-size: 1.1rem;
+    }
+    
+    .param-value5 {
+        font-size: 1.3rem;
+    }
+}
+
+
+/*about.css*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*base.html*/
+body {
+    font-family: "Exo 2", sans-serif;
+    background: url("../images/earth.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #e0f7ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.container6 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    min-height: 100vh;
+}
+
+.header6 {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 3rem;
+}
+.main-title6 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: #00e5ff;
+    text-shadow: 0 0 15px rgba(0, 229, 255, 0.7);
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle6 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #a0e7ff;
+    letter-spacing: 2px;
+}
+
+.content6 {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.about-header6 {
+    background: rgba(10, 25, 47, 0.8);
+    border: 2px solid #0077b6;
+    border-radius: 15px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0, 119, 182, 0.4);
+    margin-top: 2rem;
+}
+
+.page-title6 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #00e5ff;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.team-title6 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    color: #00e5ff;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+}
+
+.team-description6 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.2rem;
+    color: #e0f7ff;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+.header-content6 {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-photo6 {
+    flex: 0 0 45%;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-photo6 {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 2px solid #00a8ff;
+    box-shadow: 0 0 20px rgba(0, 168, 255, 0.4);
+}
+
+.header-text6 {
+    flex: 1;
+    text-align: left;
+}
+
+
+.member-photo6 {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: none;
+
+}
+
+.member-photo6 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+        border-radius: none;
+}
+
+
+.team-grid6 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.member-block6 {
+    background: rgba(10, 25, 47, 0.8);
+    border: 2px solid #0077b6;
+    border-radius: 15px;
+    padding: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    box-shadow: 0 0 15px rgba(0, 119, 182, 0.3);
+    transition: all 0.3s ease;
+}
+
+.member-block6:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 25px rgba(0, 229, 255, 0.4);
+    border-color: #00e5ff;
+}
+
+.member-photo6 {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(20, 50, 90, 0.7);
+    border: 2px solid #00a8ff;
+    flex-shrink: 0;
+}
+
+.photo-placeholder6 {
+    background: linear-gradient(45deg, #0077b6, #00b4d8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.member-info6 {
+    flex: 1;
+}
+
+.member-name6 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    color: #00e5ff;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+}
+
+.member-role6 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1rem;
+    color: #e0f7ff;
+    line-height: 1.5;
+}
+
+.action-section6 {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.nav-button6 {
+    background: rgba(0, 40, 80, 0.7);
+    border: 2px solid #00a8ff;
+    border-radius: 10px;
+    padding: 1.2rem 3rem;
+    color: #e0f7ff;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-button6:hover {
+    background: rgba(0, 80, 160, 0.8);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 168, 255, 0.5);
+}
+
+
+
+/*how-it-works.css*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Exo 2", sans-serif;
+    background: url("images/earth.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #e0f7ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+
+/* Стилі для сторінки How It Works */
+.how-it-works-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.page-title-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: #00e5ff;
+    text-shadow: 0 0 15px rgba(0, 229, 255, 0.7);
+    margin-bottom: 1rem;
+}
+
+.page-subtitle {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.3rem;
+    color: #a0e7ff;
+    opacity: 0.9;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.science-card {
+    background: rgba(10, 25, 47, 0.8);
+    border: 2px solid #0077b6;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.science-card:hover {
+    transform: translateY(-8px);
+    border-color: #00e5ff;
+    box-shadow: 0 10px 30px rgba(0, 229, 255, 0.3);
+}
+
+.science-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.1), transparent);
+    transition: left 0.6s;
+}
+
+.science-card:hover::before {
+    left: 100%;
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    color: #00e5ff;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+}
+
+.card-text {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1rem;
+    color: #e0f7ff;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* Короткий опис */
+.brief-description {
+    background: rgba(10, 25, 47, 0.6);
+    border: 1px solid #00a8ff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.brief-description p {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.1rem;
+    color: #e0f7ff;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Стилі для кнопки Back to Main */
+.back-main-button {
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    border: none;
+    border-radius: 10px;
+    padding: 1.2rem 3rem;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 180, 216, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.back-main-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 180, 216, 0.6);
+}
+
+.btn-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.7s;
+}
+
+.back-main-button:hover .btn-shine {
+    left: 100%;
+}
+
+.action-section {
+    text-align: center;
+}
