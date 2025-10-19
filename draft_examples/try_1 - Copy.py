@@ -241,7 +241,7 @@ def calculate_crossings(pha_el, dt_et, soi):
         
     pha_el_wrt_earth = spice.oscelt(state=pha_wrt_earth_state_vector,
                                     et=dt_et,
-                                    mu=GM_EARTH) # GM_Earth km^3/s^2
+                                    mu=GM_EARTH)
     print(f"\tPerigee of PHA w.r.t. the Earth in km: {pha_el_wrt_earth[0]}")
     print(f"\tEccentricity of PHA w.r.t. the Earth: {pha_el_wrt_earth[1]}")
     
@@ -249,19 +249,19 @@ def calculate_crossings(pha_el, dt_et, soi):
         pha_wrt_earth_state_vector = spice.conics(pha_el_wrt_earth, dt_et)
         earth_pha_distance = spice.vnorm(pha_wrt_earth_state_vector[:3])
         
-        # Track minimum distance for quadratic approximation
-        bracket_min_values.append((dt_et, earth_pha_distance))
+        # BROKEN CODE: doesn't work at obtaining minimum (needs debugging)
+        bracket_min_values.append((earth_pha_distance, dt_et))
         if len(bracket_min_values) == 3:
-            (t1, d1), (t2, d2), (t3, d3) = bracket_min_values
+            t1, d1 = bracket_min_values[0]
+            t2, d2 = bracket_min_values[1]
+            t3, d3 = bracket_min_values[2]
             if d2 < d1 and d2 < d3:
                 print(f"{bracket_min_values = }")
                 t_min = quadratic_approximation(t1, d1, t2, d2, t3, d3)
                 pha_wrt_earth_state_vector_at_min = spice.conics(pha_el_wrt_earth, t_min)
                 d_min = spice.vnorm(pha_wrt_earth_state_vector_at_min[:3])
                 print("********** Closest approach:", spice.et2utc(t_min, "ISOC", 3), "distance (km):", d_min)
-                min_distance = d_min
-                min_et = t_min
-                # break
+                break
             bracket_min_values.pop(0)
         
         if earth_pha_distance < min_distance:
@@ -272,8 +272,6 @@ def calculate_crossings(pha_el, dt_et, soi):
             soi_crossing_counter += 1
             print(f"Second SOI crossing at UTC: {spice.et2datetime(dt_et)}")
             print(f"dist in LD: {earth_pha_distance / LD}")
-            break
-        
         dt_et += 1
 
     print(f"\nClosest approach distance: {min_distance} km.\nAt time: {spice.et2utc(min_et, "ISOC", 3)}")
@@ -281,24 +279,9 @@ def calculate_crossings(pha_el, dt_et, soi):
 
 def quadratic_approximation(*args):
     t1, d1, t2, d2, t3, d3 = args
-    # a = (d1 - 2*d2 + d3) / ((t1 - t2)*(t1 - t3))
-    # b = (d3 - d1)/(t3 - t1) - a*(t1 + t3)
-    # t_min = -b/(2*a)
-    """ 
-    Fit a parabola through three points (t, d) and return the time of minimum distance.
-    """
-    # coeffs = np.polyfit([t1, t2, t3], [d1, d2, d3], 2)  # a t^2 + b t + c
-    # a, b, _ = coeffs
-    # t_min = -b / (2*a)
-    
-    # second suggestion
-    ts = np.array([t1, t2, t3])
-    ds = np.array([d1, d2, d3])
-    ts_shift = ts - ts.mean()            # remove large offset
-    a, b, _ = np.polyfit(ts_shift, ds, 2)
-    t_min_local = -b / (2 * a)
-    t_min = t_min_local + ts.mean()      # shift back to absolute tim
-    
+    a = (d1 - 2*d2 + d3) / ((t1 - t2)*(t1 - t3))
+    b = (d3 - d1)/(t3 - t1) - a*(t1 + t3)
+    t_min = -b/(2*a)
     print(f"{t_min = }")
     return t_min
 
